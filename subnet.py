@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
 from troposphere import Template, Ref, Join, Parameter, Equals, Output
 from troposphere.ec2 import Subnet as ec2Subnet
 from troposphere.ec2 import SubnetRouteTableAssociation
@@ -5,8 +8,7 @@ from troposphere.cloudformation import Stack
 import semver
 import boto3
 
-AWS_PROFILE="jhu"
-AWS_BUCKET="msel-cf-templates"
+from default import *
 CF_TEMPLATE_NAME="subnet.template"
 
 class Subnet():

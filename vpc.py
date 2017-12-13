@@ -1,3 +1,6 @@
+#!/usr/bin/env python
+
+from __future__ import print_function
 from troposphere import Template, Ref, Tags, Join, Parameter, Output
 from troposphere.ec2 import VPC as ec2VPC
 from troposphere.ec2 import Subnet, NetworkAcl, NetworkAclEntry,\
@@ -15,10 +18,7 @@ VERSION_PRE = None
 VERSION_BUILD = "build.1"
 VERSION = semver.format_version(VERSION_MAJOR, VERSION_MINOR, VERSION_PATCH, VERSION_PRE, VERSION_BUILD)
 
-#AWS PROFILE - Probably make this an argument
-AWS_PROFILE="jhu"
-AWS_BUCKET="msel-cf-templates"
-
+from default import *
 CF_TEMPLATE_NAME = "vpc.template"
 
 class VPC:

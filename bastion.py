@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 from __future__ import print_function
 from troposphere import Template, Join, Ref, Parameter, Output, GetAtt, Base64, Condition,\
      Equals, Not, If, Tags
@@ -5,8 +7,7 @@ from troposphere.ec2 import Instance, SecurityGroup, SecurityGroupRule, Security
 
 import boto3
 
-AWS_PROFILE="jhu"
-AWS_BUCKET="msel-cf-templates"
+from default import *
 CF_TEMPLATE_NAME="bastion.template"
 
 with open('bastion/userdata.sh', 'r') as fileUserData:
